@@ -13,8 +13,8 @@ body {
     overflow-x: hidden;
 }
 
-/* Memaksa Gambar dari <img src="images1.jpeg"> Menjadi Background Layar Penuh */
-.bg-image {
+/* Styling Video Background Fullscreen */
+.bg-video {
     position: fixed !important;
     top: 0;
     left: 0;
@@ -24,7 +24,7 @@ body {
     z-index: -2;
 }
 
-/* Layer Gelap Transparan di Atas Gambar */
+/* Layer Gelap Transparan di Atas Video */
 .bg-overlay {
     position: fixed !important;
     top: 0;
@@ -97,6 +97,31 @@ body {
 .subtitle {
     color: #94a3b8;
     font-size: 1.1rem;
+}
+
+/* --- Tombol Musik Neon --- */
+.audio-control {
+    margin-top: 1.5rem;
+}
+
+.music-btn {
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    color: #00f0ff;
+    padding: 0.6rem 1.4rem;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.music-btn:hover {
+    background: rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 18px rgba(0, 240, 255, 0.5);
+    transform: translateY(-2px);
 }
 
 /* --- Layout Container --- */
