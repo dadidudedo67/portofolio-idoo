@@ -7,38 +7,38 @@
     <!-- Google Fonts & FontAwesome -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- File CSS External -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Video Background 2K Tajam (Sudah Diganti ke bg2-idooo.mp4) -->
+    <!-- Video Background -->
     <video autoplay loop muted playsinline class="bg-video">
         <source src="bg2-idooo.mp4" type="video/mp4">
         Browser kamu tidak mendukung tag video.
     </video>
 
-    <!-- Overlay Transparan Gelap -->
+    <!-- Overlay Gelap Nuansa Biru Laut -->
     <div class="bg-overlay"></div>
 
     <!-- Badge Kelas / Status (Kanan Atas) -->
     <div class="class-badge">
         <i class="fa-solid fa-graduation-cap"></i>
-        <span>PELAJAR / STUDENT</span>
+        <span>STUDENT / PELAJAR</span>
     </div>
 
     <!-- Hero Section -->
     <header class="hero">
-        <div class="jp-tag">ポートフォリオ • Portfolio</div>
-        <h1>Halo, Saya <span class="neon-text">Idho</span></h1>
-        <p class="subtitle">Web Developer & Designer</p>
+        <div class="theme-tag"><i class="fa-solid fa-water"></i> Personal Space</div>
+        <h1>Halo, Saya <span class="ice-text">Idho</span></h1>
+        <p class="subtitle">Web Developer & Creative Designer</p>
         
-        <!-- Tombol Musik (Opsional) -->
+        <!-- Tombol Musik -->
         <div class="audio-control">
             <button class="music-btn" onclick="toggleAudio()">
-                <i class="fa-solid fa-music"></i> <span id="music-text">Play Music</span>
+                <i class="fa-solid fa-music"></i> <span id="music-text">Play Audio</span>
             </button>
             <audio id="bg-music" loop src="music.mp3"></audio>
         </div>
@@ -47,19 +47,19 @@
     <!-- Main Container -->
     <main class="container">
         
-        <!-- Section: Tentang Saya (Accordion) -->
+        <!-- Section: Tentang Saya -->
         <div class="glass-card">
             <details open>
                 <summary>
                     <div class="card-header">
-                        <i class="fa-solid fa-user icon"></i>
-                        <h2>Tentang Saya <span class="jp-sub">/ 私について</span></h2>
+                        <i class="fa-solid fa-user-astronaut icon"></i>
+                        <h2>Tentang Saya</h2>
                     </div>
                     <i class="fa-solid fa-chevron-down arrow-icon"></i>
                 </summary>
                 <div class="details-content">
                     <p class="about-desc">
-                        Halo! Saya adalah seorang pengembang web yang berfokus pada pembuatan desain antarmuka yang modern, responsif, dan interaktif dengan tema futuristik/cyberpunk.
+                        Halo! Saya adalah seorang pengembang web yang suka membuat tampilan antarmuka yang bersih, modern, dan estetik dengan sentuhan visual yang menyenangkan.
                     </p>
                     <div class="info-grid">
                         <div class="info-item">
@@ -89,19 +89,19 @@
             <div class="card-header-static">
                 <div class="header-title">
                     <i class="fa-solid fa-code icon"></i>
-                    <h2>Proyek Saya <span class="jp-sub">/ プロジェクト</span></h2>
+                    <h2>Proyek Saya</h2>
                 </div>
             </div>
             <div class="project-grid">
                 <div class="project-card">
                     <span class="project-tag">WEB DESIGN</span>
-                    <h3><i class="fa-solid fa-folder"></i> Portofolio Tokyo Night</h3>
-                    <p>Website portofolio interaktif berbasis HTML & CSS dengan latar belakang video anime dinamis.</p>
+                    <h3><i class="fa-solid fa-folder-open"></i> Interactive Portfolio</h3>
+                    <p>Website portofolio interaktif berbasis HTML & CSS dengan efek latar belakang video dinamis.</p>
                 </div>
                 <div class="project-card">
-                    <span class="project-tag">UI/UX</span>
-                    <h3><i class="fa-solid fa-laptop-code"></i> Cyber Dashboard</h3>
-                    <p>Konsep tampilan antarmuka bernuansa neon cyberpunk untuk aplikasi masa depan.</p>
+                    <span class="project-tag">CREATIVE UI</span>
+                    <h3><i class="fa-solid fa-laptop-code"></i> Modern Interface</h3>
+                    <p>Konsep antarmuka bersih bernuansa estetik untuk aplikasi masa depan.</p>
                 </div>
             </div>
         </div>
@@ -113,17 +113,17 @@
         <p>&copy; 2026 Idho. Dibuat dengan <span>CSS3 & HTML5</span></p>
     </footer>
 
-    <!-- Script Sederhana Musik -->
+    <!-- Script Musik -->
     <script>
         function toggleAudio() {
             const music = document.getElementById('bg-music');
             const btnText = document.getElementById('music-text');
             if (music.paused) {
                 music.play();
-                btnText.innerText = "Pause Music";
+                btnText.innerText = "Pause Audio";
             } else {
                 music.pause();
-                btnText.innerText = "Play Music";
+                btnText.innerText = "Play Audio";
             }
         }
     </script>
