@@ -13,7 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Memaksa Gambar dari <img src="images1.jpeg"> Menjadi Background Layar Penuh */
+/* Memaksa Gambar Menjadi Background Layar Penuh */
 .bg-image {
     position: fixed !important;
     top: 0;
@@ -21,10 +21,10 @@ body {
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    z-index: -2; /* Angka minus agar posisi gambar ada di PENTING/PALING BELAKANG */
+    z-index: -2;
 }
 
-/* Layer Gelap Transparan di Atas Gambar Agar Teks Terbaca Jelas */
+/* Layer Gelap Transparan di Atas Gambar */
 .bg-overlay {
     position: fixed !important;
     top: 0;
@@ -34,7 +34,7 @@ body {
     background: rgba(10, 10, 20, 0.75);
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
-    z-index: -1; /* Di atas gambar, tapi di bawah teks portofolio */
+    z-index: -1;
 }
 
 /* --- Hero Section --- */
@@ -98,18 +98,126 @@ body {
     box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.15);
 }
 
-.card-header {
+/* Styling Fitur Klik (Accordion) */
+details summary {
+    cursor: pointer;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+details summary::-webkit-details-marker {
+    display: none;
+}
+
+.card-header, .card-header-static {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    margin-bottom: 1.2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-    padding-bottom: 0.8rem;
 }
 
-.card-header h2 {
+.header-title {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.card-header h2, .card-header-static h2 {
     font-size: 1.35rem;
     color: #ffffff;
+}
+
+.arrow-icon {
+    color: #00f0ff;
+    transition: transform 0.3s ease;
+}
+
+details[open] .arrow-icon {
+    transform: rotate(180deg);
+}
+
+.details-content {
+    margin-top: 1.2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.about-desc {
+    color: #cbd5e1;
+    line-height: 1.7;
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Info Grid (Pelajar & Sosmed) */
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.info-item {
+    background: rgba(15, 23, 42, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+}
+
+.info-item i {
+    color: #ff4d6d;
+    font-size: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+.info-item strong {
+    display: block;
+    font-size: 0.85rem;
+    color: #94a3b8;
+    margin-bottom: 0.3rem;
+}
+
+.info-item p {
+    font-size: 0.9rem;
+    color: #f8fafc;
+}
+
+/* Tombol Sosmed */
+.social-links {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 0.4rem;
+    flex-wrap: wrap;
+}
+
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fff;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.social-btn.ig {
+    background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+}
+
+.social-btn.tt {
+    background: #000;
+    border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .jp-sub {
@@ -123,13 +231,13 @@ body {
     color: #ff4d6d;
 }
 
-.glass-card p {
-    color: #cbd5e1;
-    line-height: 1.7;
-    font-size: 0.95rem;
+/* --- Project Grid --- */
+.card-header-static {
+    margin-bottom: 1.2rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-bottom: 0.8rem;
 }
 
-/* --- Project Grid --- */
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -142,8 +250,6 @@ body {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 14px;
     padding: 1.25rem;
-    position: relative;
-    overflow: hidden;
     transition: transform 0.3s ease, border-color 0.3s ease;
 }
 
