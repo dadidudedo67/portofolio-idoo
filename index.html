@@ -4,43 +4,48 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Saya</title>
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font & Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+    <!-- Overlay Gelap agar background tidak mengganggu kejelasan teks -->
+    <div class="bg-overlay"></div>
+
     <header class="hero">
         <div class="hero-content">
-            <span class="badge">Welcome to my space</span>
-            <h1>Halo, Saya <span class="highlight">[Nama Kamu]</span> 👋</h1>
+            <span class="jp-tag">ポートフォリオ • Portfolio</span>
+            <h1>Halo, Saya <span class="neon-text">idoo</span></h1>
             <p class="subtitle">Web Developer & Designer</p>
         </div>
     </header>
 
     <main class="container">
-        <section id="about" class="card">
+        <section id="about" class="glass-card">
             <div class="card-header">
-                <i class="fa-solid fa-user icon"></i>
-                <h2>Tentang Saya</h2>
+                <i class="fa-solid fa-torii-gate icon"></i>
+                <h2>Tentang Saya <span class="jp-sub">/ 私について</span></h2>
             </div>
-            <p>Saya adalah seorang pengembang web yang berfokus pada pembuatan aplikasi web modern, interaktif, dan responsif. Suka mengeksplorasi teknologi baru dan menciptakan desain yang memanjakan mata.</p>
+            <p>Saya adalah seorang pengembang web yang berfokus pada pembuatan aplikasi web modern, interaktif, dan responsif dengan estetika visual yang kuat.</p>
         </section>
 
-        <section id="projects" class="card">
+        <section id="projects" class="glass-card">
             <div class="card-header">
-                <i class="fa-solid fa-laptop-code icon"></i>
-                <h2>Proyek Saya</h2>
+                <i class="fa-solid fa-code icon"></i>
+                <h2>Proyek Saya <span class="jp-sub">/ プロジェクト</span></h2>
             </div>
             <div class="project-grid">
                 <div class="project-card">
+                    <div class="project-tag">Aplikasi</div>
                     <h3><i class="fa-solid fa-clipboard-user"></i> Sistem Presensi</h3>
                     <p>Aplikasi pencatatan kehadiran pegawai berbasis web yang efisien dan akurat.</p>
                 </div>
                 <div class="project-card">
-                    <h3><i class="fa-solid fa-globe"></i> Website Portofolio</h3>
-                    <p>Landing page pribadi modern yang di-hosting langsung menggunakan GitHub Pages.</p>
+                    <div class="project-tag">GitHub Pages</div>
+                    <h3><div class="fa-solid fa-globe"></div> Website Portofolio</h3>
+                    <p>Landing page pribadi bernuansa Tokyo Night yang di-hosting di GitHub Pages.</p>
                 </div>
             </div>
         </section>
