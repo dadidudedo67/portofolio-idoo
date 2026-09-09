@@ -109,28 +109,22 @@ body {
     font-size: 1.1rem;
 }
 
-/* --- Tombol Musik --- */
-.audio-control {
-    margin-top: 1.5rem;
+/* Petunjuk Audio di Hero Section */
+.audio-hint {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: 1.2rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(10, 25, 47, 0.6);
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
-.music-btn {
-    background: rgba(10, 25, 47, 0.85);
-    border: 1px solid rgba(0, 229, 255, 0.4);
+.audio-hint i {
     color: #00e5ff;
-    padding: 0.6rem 1.4rem;
-    border-radius: 25px;
-    font-size: 0.9rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
-}
-
-.music-btn:hover {
-    background: rgba(0, 229, 255, 0.2);
-    box-shadow: 0 0 18px rgba(0, 229, 255, 0.4);
-    transform: translateY(-2px);
 }
 
 /* --- Layout Container --- */
