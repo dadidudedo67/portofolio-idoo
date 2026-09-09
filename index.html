@@ -20,22 +20,57 @@
     <header class="hero">
         <div class="hero-content">
             <span class="jp-tag">ポートフォリオ • Portfolio</span>
-            <h1>Halo, Saya <span class="neon-text">Idoo</span></h1>
+            <h1>Halo, Saya <span class="neon-text">[Nama Kamu]</span></h1>
             <p class="subtitle">Web Developer & Designer</p>
         </div>
     </header>
 
     <main class="container">
+        <!-- Section Tentang Saya dengan Fitur Klik (Accordion) -->
         <section id="about" class="glass-card">
-            <div class="card-header">
-                <i class="fa-solid fa-torii-gate icon"></i>
-                <h2>Tentang Saya <span class="jp-sub">/ 私について</span></h2>
-            </div>
-            <p>Saya adalah seorang pengembang web yang berfokus pada pembuatan aplikasi web modern, interaktif, dan responsif dengan estetika visual yang kuat.</p>
+            <details>
+                <summary class="card-header">
+                    <div class="header-title">
+                        <i class="fa-solid fa-torii-gate icon"></i>
+                        <h2>Tentang Saya <span class="jp-sub">/ 私について</span></h2>
+                    </div>
+                    <i class="fa-solid fa-chevron-down arrow-icon"></i>
+                </summary>
+                
+                <div class="details-content">
+                    <p class="about-desc">Saya adalah seorang pengembang web yang berfokus pada pembuatan aplikasi web modern, interaktif, dan responsif dengan estetika visual yang kuat.</p>
+                    
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fa-solid fa-user-gear"></i>
+                            <div>
+                                <strong>Status:</strong>
+                                <p>Pelajar / Web Developer</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-item">
+                            <i class="fa-solid fa-share-nodes"></i>
+                            <div>
+                                <strong>Media Sosial:</strong>
+                                <div class="social-links">
+                                    <a href="https://instagram.com/username_kamu" target="_blank" class="social-btn ig">
+                                        <i class="fa-brands fa-instagram"></i> Instagram
+                                    </a>
+                                    <a href="https://tiktok.com/@username_kamu" target="_blank" class="social-btn tt">
+                                        <i class="fa-brands fa-tiktok"></i> TikTok
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </details>
         </section>
 
+        <!-- Section Proyek Saya -->
         <section id="projects" class="glass-card">
-            <div class="card-header">
+            <div class="card-header-static">
                 <i class="fa-solid fa-code icon"></i>
                 <h2>Proyek Saya <span class="jp-sub">/ プロジェクト</span></h2>
             </div>
