@@ -4,131 +4,128 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Saya</title>
-    <!-- Google Fonts & Font Awesome Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts & FontAwesome -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- File CSS External -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <!-- Video Background (Menggantikan Gambar) -->
+    <!-- Video Background 2K Tajam (Sudah Diganti ke bg2-idooo.mp4) -->
     <video autoplay loop muted playsinline class="bg-video">
-        <source src="bg-video.mp4" type="video/mp4">
-        Browser kamu tidak mendukung video background.
+        <source src="bg2-idooo.mp4" type="video/mp4">
+        Browser kamu tidak mendukung tag video.
     </video>
 
-    <!-- Layer Gelap Transparan (Overlay) -->
+    <!-- Overlay Transparan Gelap -->
     <div class="bg-overlay"></div>
 
-    <!-- Badge Kelas di Kanan Atas -->
+    <!-- Badge Kelas / Status (Kanan Atas) -->
     <div class="class-badge">
-        <i class="fa-solid fa-graduation-cap"></i> X PPLG
+        <i class="fa-solid fa-graduation-cap"></i>
+        <span>PELAJAR / STUDENT</span>
     </div>
 
+    <!-- Hero Section -->
     <header class="hero">
-        <div class="hero-content">
-            <span class="jp-tag">ポートフォリオ • Portfolio</span>
-            <h1>Halo, Saya <span class="neon-text">Idho</span></h1>
-            <p class="subtitle">Web Developer & Designer</p>
-            
-            <!-- Tombol Play Music -->
-            <div class="audio-control">
-                <button id="musicToggle" class="music-btn">
-                    <i class="fa-solid fa-music"></i> <span id="musicText">Play Music</span>
-                </button>
-            </div>
+        <div class="jp-tag">ポートフォリオ • Portfolio</div>
+        <h1>Halo, Saya <span class="neon-text">Idho</span></h1>
+        <p class="subtitle">Web Developer & Designer</p>
+        
+        <!-- Tombol Musik (Opsional) -->
+        <div class="audio-control">
+            <button class="music-btn" onclick="toggleAudio()">
+                <i class="fa-solid fa-music"></i> <span id="music-text">Play Music</span>
+            </button>
+            <audio id="bg-music" loop src="music.mp3"></audio>
         </div>
     </header>
 
+    <!-- Main Container -->
     <main class="container">
-        <!-- Section Tentang Saya dengan Fitur Klik (Accordion) -->
-        <section id="about" class="glass-card">
-            <details>
-                <summary class="card-header">
-                    <div class="header-title">
-                        <i class="fa-solid fa-torii-gate icon"></i>
+        
+        <!-- Section: Tentang Saya (Accordion) -->
+        <div class="glass-card">
+            <details open>
+                <summary>
+                    <div class="card-header">
+                        <i class="fa-solid fa-user icon"></i>
                         <h2>Tentang Saya <span class="jp-sub">/ 私について</span></h2>
                     </div>
                     <i class="fa-solid fa-chevron-down arrow-icon"></i>
                 </summary>
-                
                 <div class="details-content">
-                    <p class="about-desc">Saya adalah seorang pengembang web yang berfokus pada pembuatan aplikasi web modern, interaktif, dan responsif dengan estetika visual yang kuat.</p>
-                    
+                    <p class="about-desc">
+                        Halo! Saya adalah seorang pengembang web yang berfokus pada pembuatan desain antarmuka yang modern, responsif, dan interaktif dengan tema futuristik/cyberpunk.
+                    </p>
                     <div class="info-grid">
                         <div class="info-item">
-                            <i class="fa-solid fa-user-gear"></i>
+                            <i class="fa-solid fa-id-card"></i>
                             <div>
-                                <strong>Status:</strong>
-                                <p>Pelajar / Web Developer</p>
+                                <strong>Status</strong>
+                                <p>Pelajar / Student</p>
                             </div>
                         </div>
-                        
                         <div class="info-item">
                             <i class="fa-solid fa-share-nodes"></i>
                             <div>
-                                <strong>Media Sosial:</strong>
+                                <strong>Sosial Media</strong>
                                 <div class="social-links">
-                                    <a href="https://instagram.com/idhokml" target="_blank" class="social-btn ig">
-                                        <i class="fa-brands fa-instagram"></i> @idhokml
-                                    </a>
-                                    <a href="https://tiktok.com/@idho979" target="_blank" class="social-btn tt">
-                                        <i class="fa-brands fa-tiktok"></i> @idho979
-                                    </a>
+                                    <a href="#" class="social-btn ig"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                                    <a href="#" class="social-btn tt"><i class="fa-brands fa-tiktok"></i> TikTok</a>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </details>
-        </section>
+        </div>
 
-        <!-- Section Proyek Saya -->
-        <section id="projects" class="glass-card">
+        <!-- Section: Proyek Saya -->
+        <div class="glass-card">
             <div class="card-header-static">
-                <i class="fa-solid fa-code icon"></i>
-                <h2>Proyek Saya <span class="jp-sub">/ プロジェクト</span></h2>
+                <div class="header-title">
+                    <i class="fa-solid fa-code icon"></i>
+                    <h2>Proyek Saya <span class="jp-sub">/ プロジェクト</span></h2>
+                </div>
             </div>
             <div class="project-grid">
                 <div class="project-card">
-                    <div class="project-tag">Aplikasi</div>
-                    <h3><i class="fa-solid fa-clipboard-user"></i> Sistem Presensi</h3>
-                    <p>Aplikasi pencatatan kehadiran pegawai berbasis web yang efisien dan akurat.</p>
+                    <span class="project-tag">WEB DESIGN</span>
+                    <h3><i class="fa-solid fa-folder"></i> Portofolio Tokyo Night</h3>
+                    <p>Website portofolio interaktif berbasis HTML & CSS dengan latar belakang video anime dinamis.</p>
                 </div>
                 <div class="project-card">
-                    <div class="project-tag">GitHub Pages</div>
-                    <h3><i class="fa-solid fa-globe"></i> Website Portofolio</h3>
-                    <p>Landing page pribadi bernuansa Tokyo Night yang di-hosting di GitHub Pages.</p>
+                    <span class="project-tag">UI/UX</span>
+                    <h3><i class="fa-solid fa-laptop-code"></i> Cyber Dashboard</h3>
+                    <p>Konsep tampilan antarmuka bernuansa neon cyberpunk untuk aplikasi masa depan.</p>
                 </div>
             </div>
-        </section>
+        </div>
+
     </main>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 <span>Idho</span>. All rights reserved.</p>
+        <p>&copy; 2026 Idho. Dibuat dengan <span>CSS3 & HTML5</span></p>
     </footer>
 
-    <!-- Script JavaScript Pemutar Musik -->
+    <!-- Script Sederhana Musik -->
     <script>
-        const audio = new Audio('lagu.mp3');
-        audio.loop = true;
-
-        const musicToggle = document.getElementById('musicToggle');
-        const musicText = document.getElementById('musicText');
-        let isPlaying = false;
-
-        musicToggle.addEventListener('click', () => {
-            if (isPlaying) {
-                audio.pause();
-                musicText.textContent = 'Play Music';
-                musicToggle.style.borderColor = 'rgba(0, 240, 255, 0.4)';
+        function toggleAudio() {
+            const music = document.getElementById('bg-music');
+            const btnText = document.getElementById('music-text');
+            if (music.paused) {
+                music.play();
+                btnText.innerText = "Pause Music";
             } else {
-                audio.play();
-                musicText.textContent = 'Pause Music';
-                musicToggle.style.borderColor = '#ff4d6d';
+                music.pause();
+                btnText.innerText = "Play Music";
             }
-            isPlaying = !isPlaying;
-        });
+        }
     </script>
 </body>
 </html>
