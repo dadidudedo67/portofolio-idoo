@@ -13,7 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-/* --- VIDEO BACKGROUND FULLSCREEN (SUPER TAJAM) --- */
+/* --- VIDEO BACKGROUND FULLSCREEN --- */
 .bg-video {
     position: fixed;
     top: 50%;
@@ -30,23 +30,32 @@ body {
     image-rendering: crisp-edges;
 }
 
-/* Overlay Nuansa Deep Blue / Ocean */
+/* Overlay Nuansa Deep Blue */
 .bg-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(8, 18, 32, 0.45); /* Gelap transparan dengan tone biru laut */
+    background: rgba(8, 18, 32, 0.45);
     z-index: -1;
     pointer-events: none;
 }
 
-/* --- Badge Kelas (Kanan Atas) --- */
-.class-badge {
+/* --- Container Kontrol Kanan Atas (Badge & Tombol Suara) --- */
+.top-right-controls {
     position: fixed;
     top: 1.2rem;
     right: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 0.6rem;
+    z-index: 100;
+}
+
+/* Badge Student */
+.class-badge {
     background: rgba(10, 25, 47, 0.85);
     border: 1px solid rgba(0, 229, 255, 0.3);
     color: #00e5ff;
@@ -56,7 +65,6 @@ body {
     font-weight: 700;
     letter-spacing: 1px;
     box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
-    z-index: 100;
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -64,6 +72,37 @@ body {
 
 .class-badge i {
     color: #70a1ff;
+}
+
+/* Tombol Suara ON/OFF di Bawah Badge Student */
+.sound-toggle-btn {
+    background: rgba(10, 25, 47, 0.85);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #94a3b8;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.sound-toggle-btn:hover {
+    border-color: rgba(0, 229, 255, 0.5);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+.sound-toggle-btn.active {
+    background: rgba(0, 229, 255, 0.15);
+    border-color: rgba(0, 229, 255, 0.6);
+    color: #00e5ff;
+    box-shadow: 0 0 12px rgba(0, 229, 255, 0.3);
 }
 
 /* --- Hero Section --- */
@@ -107,24 +146,6 @@ body {
 .subtitle {
     color: #cbd5e1;
     font-size: 1.1rem;
-}
-
-/* Petunjuk Audio di Hero Section */
-.audio-hint {
-    font-size: 0.8rem;
-    color: #94a3b8;
-    margin-top: 1.2rem;
-    display: inline-flex;
-    align-items: center;
-    gap: 0.4rem;
-    background: rgba(10, 25, 47, 0.6);
-    padding: 0.4rem 0.9rem;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-}
-
-.audio-hint i {
-    color: #00e5ff;
 }
 
 /* --- Layout Container --- */
