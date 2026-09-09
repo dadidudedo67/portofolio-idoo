@@ -10,29 +10,31 @@ body {
     min-height: 100vh;
     color: #f1f5f9;
     position: relative;
+    overflow-x: hidden;
 }
 
-/* Styling Gambar Background dari HTML (src="images1.jpeg") */
+/* Memaksa Gambar dari <img src="images1.jpeg"> Menjadi Background Layar Penuh */
 .bg-image {
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     object-fit: cover;
-    z-index: -2;
+    z-index: -2; /* Angka minus agar posisi gambar ada di PENTING/PALING BELAKANG */
 }
 
-/* Layer Gelap Transparan di Atas Gambar */
+/* Layer Gelap Transparan di Atas Gambar Agar Teks Terbaca Jelas */
 .bg-overlay {
-    position: fixed;
+    position: fixed !important;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(10, 10, 20, 0.7);
+    background: rgba(10, 10, 20, 0.75);
     backdrop-filter: blur(4px);
-    z-index: -1;
+    -webkit-backdrop-filter: blur(4px);
+    z-index: -1; /* Di atas gambar, tapi di bawah teks portofolio */
 }
 
 /* --- Hero Section --- */
