@@ -173,14 +173,15 @@ body {
     padding: 0 1.5rem;
 }
 
-/* --- Organic Asymmetric Glass Card (Bentuk Unik Kolam/Lekukan) --- */
+/* --- Organic Asymmetric Glass Card (Dibuat Lebih Transparan) --- */
 .glass-card {
-    background: rgba(10, 25, 47, 0.68);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(0, 229, 255, 0.18);
+    background: rgba(10, 25, 47, 0.35); /* Transparansi diturunkan ke 0.35 */
+    backdrop-filter: blur(16px); /* Efek blur dinaikkan sedikit agar teks tetap terbaca */
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(0, 229, 255, 0.25);
     padding: 2.2rem;
     margin-bottom: 2rem;
-    box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.45);
+    box-shadow: 0 10px 35px 0 rgba(0, 0, 0, 0.3);
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
@@ -278,10 +279,10 @@ details[open] .arrow-icon {
 }
 
 .info-item {
-    background: rgba(15, 23, 42, 0.55);
-    border: 1px solid rgba(255, 255, 255, 0.08);
+    background: rgba(15, 23, 42, 0.3); /* Transparansi diturunkan ke 0.3 */
+    border: 1px solid rgba(255, 255, 255, 0.1);
     padding: 1.1rem;
-    border-radius: 20px 10px 20px 10px; /* Bentuk asimetris mini */
+    border-radius: 20px 10px 20px 10px;
     display: flex;
     align-items: flex-start;
     gap: 0.9rem;
@@ -366,7 +367,7 @@ details[open] .arrow-icon {
 }
 
 .project-card {
-    background: rgba(10, 25, 47, 0.65);
+    background: rgba(10, 25, 47, 0.3); /* Transparansi diturunkan ke 0.3 */
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 24px 12px 24px 12px;
     padding: 1.4rem;
