@@ -30,7 +30,7 @@
             <span>STUDENT / PELAJAR</span>
         </div>
         
-        <!-- Tombol Suara ON/OFF di bawah Student Badge -->
+        <!-- Tombol Suara ON/OFF -->
         <button id="sound-btn" class="sound-toggle-btn" onclick="toggleSound()">
             <i id="sound-icon" class="fa-solid fa-volume-xmark"></i>
             <span id="sound-text">SOUND OFF</span>
@@ -42,7 +42,13 @@
         <div class="theme-tag">
             <i class="fa-solid fa-fish-fins koi-badge-icon"></i> Asian Cyprinid Theme
         </div>
-        <h1 class="moving-title">Halo, Saya <span class="ice-text">Idoo</span> <i class="fa-solid fa-fish koi-heading-icon"></i></h1>
+        
+        <!-- Judul dengan Animasi Ketik (Typewriter) -->
+        <h1 class="moving-title">
+            <span id="typewriter-text"></span><span class="cursor">|</span>
+            <i class="fa-solid fa-fish koi-heading-icon"></i>
+        </h1>
+        
         <p class="subtitle">Web Developer & Creative Designer</p>
     </header>
 
@@ -65,7 +71,7 @@
                     </p>
                     <div class="info-grid">
                         
-                        <!-- Kolom Sekolah (Bentuk Card Berpengisi & Bisa Diklik) -->
+                        <!-- Kolom Sekolah (Bentuk Card Interaktif) -->
                         <div class="info-item school-card-item">
                             <i class="fa-solid fa-school icon-neon"></i>
                             <div class="school-card-body">
@@ -87,10 +93,12 @@
                                 <strong>Sosial Media</strong>
                                 <div class="social-links">
                                     <a href="https://instagram.com/idhokml" target="_blank" class="social-btn ig">
-                                        <i class="fa-brands fa-instagram"></i> @idhokml
+                                        <i class="fa-brands fa-instagram"></i>
+                                        <span>@idhokml</span>
                                     </a>
                                     <a href="https://tiktok.com/@idho979" target="_blank" class="social-btn tt">
-                                        <i class="fa-brands fa-tiktok"></i> @idho979
+                                        <i class="fa-brands fa-tiktok"></i>
+                                        <span>@idho979</span>
                                     </a>
                                 </div>
                             </div>
@@ -132,8 +140,9 @@
         <p>&copy; 2026 Idoo. Dibuat dengan <i class="fa-solid fa-fish koi-footer-icon"></i> & <span>CSS3 / HTML5</span></p>
     </footer>
 
-    <!-- Script Tombol Suara ON/OFF -->
+    <!-- Script Tombol Suara & Animasi Ketik -->
     <script>
+        // Script Suara Video Background
         function toggleSound() {
             const video = document.getElementById('bg-video');
             const icon = document.getElementById('sound-icon');
@@ -153,6 +162,56 @@
                 btn.classList.remove("active");
             }
         }
+
+        // Script Animasi Ketik (Typewriter) Seperti VT TikTok
+        const textElement = document.getElementById("typewriter-text");
+        const phrases = [
+            'Halo, Saya <span class="ice-text">Idoo</span>',
+            'Web Designer'
+        ];
+
+        let phraseIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeEffect() {
+            const currentPhrase = phrases[phraseIndex];
+
+            if (isDeleting) {
+                if (currentPhrase.includes('<span class="ice-text">')) {
+                    if (charIndex > 11) {
+                        charIndex--;
+                    } else {
+                        charIndex = 0;
+                    }
+                } else {
+                    charIndex--;
+                }
+            } else {
+                if (currentPhrase.includes('<span class="ice-text">') && charIndex === 11) {
+                    charIndex = currentPhrase.length;
+                } else {
+                    charIndex++;
+                }
+            }
+
+            textElement.innerHTML = currentPhrase.substring(0, charIndex);
+
+            let typingSpeed = isDeleting ? 40 : 80;
+
+            if (!isDeleting && charIndex >= currentPhrase.length) {
+                typingSpeed = 2000; // Tahan teks selama 2 detik
+                isDeleting = true;
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                typingSpeed = 500;
+            }
+
+            setTimeout(typeEffect, typingSpeed);
+        }
+
+        document.addEventListener("DOMContentLoaded", typeEffect);
     </script>
 </body>
 </html>
