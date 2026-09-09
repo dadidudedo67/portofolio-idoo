@@ -4,29 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio Saya</title>
+    <!-- Google Fonts & Font Awesome Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Halo, Saya [Muhamad Ridho]</h1>
-        <p>Web Developer & Designer</p>
+
+    <header class="hero">
+        <div class="hero-content">
+            <span class="badge">Welcome to my space</span>
+            <h1>Halo, Saya <span class="highlight">[Nama Kamu]</span> 👋</h1>
+            <p class="subtitle">Web Developer & Designer</p>
+        </div>
     </header>
 
-    <section id="about">
-        <h2>Tentang Saya</h2>
-        <p>Saya adalah seorang pangeran yang sangat dermawan dan suka menolong orang lain.</p>
-    </section>
+    <main class="container">
+        <section id="about" class="card">
+            <div class="card-header">
+                <i class="fa-solid fa-user icon"></i>
+                <h2>Tentang Saya</h2>
+            </div>
+            <p>Saya adalah seorang pengembang web yang berfokus pada pembuatan aplikasi web modern, interaktif, dan responsif. Suka mengeksplorasi teknologi baru dan menciptakan desain yang memanjakan mata.</p>
+        </section>
 
-    <section id="projects">
-        <h2>Proyek Saya</h2>
-        <ul>
-            <li><strong>Sistem Presensi:</strong> Aplikasi pencatatan kehadiran pegawai.</li>
-            <li><strong>Website Portofolio:</strong> Landing page pribadi menggunakan GitHub Pages.</li>
-        </ul>
-    </section>
+        <section id="projects" class="card">
+            <div class="card-header">
+                <i class="fa-solid fa-laptop-code icon"></i>
+                <h2>Proyek Saya</h2>
+            </div>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3><i class="fa-solid fa-clipboard-user"></i> Sistem Presensi</h3>
+                    <p>Aplikasi pencatatan kehadiran pegawai berbasis web yang efisien dan akurat.</p>
+                </div>
+                <div class="project-card">
+                    <h3><i class="fa-solid fa-globe"></i> Website Portofolio</h3>
+                    <p>Landing page pribadi modern yang di-hosting langsung menggunakan GitHub Pages.</p>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2026 [Muhamad Ridho]. All rights reserved.</p>
+        <p>&copy; 2026 <span>[Nama Kamu]</span>. All rights reserved.</p>
     </footer>
+
 </body>
 </html>
