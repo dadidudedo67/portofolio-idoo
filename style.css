@@ -13,7 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Memaksa Gambar Menjadi Background Layar Penuh */
+/* Memaksa Gambar dari <img src="images1.jpeg"> Menjadi Background Layar Penuh */
 .bg-image {
     position: fixed !important;
     top: 0;
@@ -35,6 +35,32 @@ body {
     backdrop-filter: blur(4px);
     -webkit-backdrop-filter: blur(4px);
     z-index: -1;
+}
+
+/* --- Badge Kelas (Kanan Atas) --- */
+.class-badge {
+    position: fixed;
+    top: 1.2rem;
+    right: 1.2rem;
+    background: rgba(15, 23, 42, 0.7);
+    border: 1px solid rgba(0, 240, 255, 0.4);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #00f0ff;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.class-badge i {
+    color: #ff4d6d;
 }
 
 /* --- Hero Section --- */
