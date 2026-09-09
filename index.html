@@ -11,8 +11,11 @@
 </head>
 <body>
 
-    <!-- Gambar Background Menggunakan src -->
-    <img src="images1.jpeg" alt="Tokyo Night Background" class="bg-image">
+    <!-- Video Background (Menggantikan Gambar) -->
+    <video autoplay loop muted playsinline class="bg-video">
+        <source src="bg-video.mp4" type="video/mp4">
+        Browser kamu tidak mendukung video background.
+    </video>
 
     <!-- Layer Gelap Transparan (Overlay) -->
     <div class="bg-overlay"></div>
@@ -27,6 +30,13 @@
             <span class="jp-tag">ポートフォリオ • Portfolio</span>
             <h1>Halo, Saya <span class="neon-text">Idho</span></h1>
             <p class="subtitle">Web Developer & Designer</p>
+            
+            <!-- Tombol Play Music -->
+            <div class="audio-control">
+                <button id="musicToggle" class="music-btn">
+                    <i class="fa-solid fa-music"></i> <span id="musicText">Play Music</span>
+                </button>
+            </div>
         </div>
     </header>
 
@@ -98,5 +108,27 @@
         <p>&copy; 2026 <span>Idho</span>. All rights reserved.</p>
     </footer>
 
+    <!-- Script JavaScript Pemutar Musik -->
+    <script>
+        const audio = new Audio('lagu.mp3');
+        audio.loop = true;
+
+        const musicToggle = document.getElementById('musicToggle');
+        const musicText = document.getElementById('musicText');
+        let isPlaying = false;
+
+        musicToggle.addEventListener('click', () => {
+            if (isPlaying) {
+                audio.pause();
+                musicText.textContent = 'Play Music';
+                musicToggle.style.borderColor = 'rgba(0, 240, 255, 0.4)';
+            } else {
+                audio.play();
+                musicText.textContent = 'Pause Music';
+                musicToggle.style.borderColor = '#ff4d6d';
+            }
+            isPlaying = !isPlaying;
+        });
+    </script>
 </body>
 </html>
