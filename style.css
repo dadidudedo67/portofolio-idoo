@@ -1,31 +1,146 @@
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
+/* --- Google Font & Base Styling --- */
+* {
     margin: 0;
     padding: 0;
-    color: #333;
-    background-color: #f4f4f9;
+    box-sizing: border-box;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
-header {
-    background: #24292e;
-    color: #fff;
-    padding: 2rem;
+body {
+    background-color: #0f172a;
+    color: #e2e8f0;
+    line-height: 1.6;
+}
+
+/* --- Hero Section --- */
+.hero {
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #4338ca 100%);
+    padding: 5rem 1.5rem;
     text-align: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-section {
+.badge {
+    background: rgba(99, 102, 241, 0.2);
+    color: #a5b4fc;
+    border: 1px solid rgba(165, 180, 252, 0.3);
+    padding: 0.4rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin: 1rem 0 0.5rem;
+    font-weight: 700;
+}
+
+.highlight {
+    background: linear-gradient(to right, #818cf8, #c084fc);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.subtitle {
+    color: #94a3b8;
+    font-size: 1.1rem;
+}
+
+/* --- Main Layout --- */
+.container {
     max-width: 800px;
-    margin: 2rem auto;
-    padding: 1rem 2rem;
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin: -2rem auto 3rem;
+    padding: 0 1.5rem;
 }
 
+.card {
+    background: #1e293b;
+    border: 1px solid #334155;
+    border-radius: 16px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.card:hover {
+    border-color: #6366f1;
+    transform: translateY(-2px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.card-header h2 {
+    font-size: 1.35rem;
+    color: #f8fafc;
+}
+
+.icon {
+    font-size: 1.2rem;
+    color: #818cf8;
+}
+
+.card p {
+    color: #94a3b8;
+    font-size: 0.95rem;
+}
+
+/* --- Project Cards Grid --- */
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.project-card {
+    background: #0f172a;
+    border: 1px solid #334155;
+    border-radius: 12px;
+    padding: 1.25rem;
+    transition: all 0.2s ease;
+}
+
+.project-card:hover {
+    background: #1e1b4b;
+    border-color: #818cf8;
+}
+
+.project-card h3 {
+    font-size: 1.05rem;
+    color: #f1f5f9;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.project-card h3 i {
+    color: #a855f7;
+    font-size: 0.9rem;
+}
+
+.project-card p {
+    font-size: 0.875rem;
+}
+
+/* --- Footer --- */
 footer {
     text-align: center;
-    padding: 1rem;
-    background: #ddd;
-    margin-top: 2rem;
+    padding: 2rem;
+    color: #64748b;
+    font-size: 0.875rem;
+    border-top: 1px solid #1e293b;
+}
+
+footer span {
+    color: #cbd5e1;
+    font-weight: 500;
 }
