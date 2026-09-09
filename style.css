@@ -3,7 +3,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Plus Jakarta Sans', 'Noto Sans JP', sans-serif;
+    font-family: 'Plus Jakarta Sans', sans-serif;
 }
 
 body {
@@ -13,7 +13,7 @@ body {
     overflow-x: hidden;
 }
 
-/* --- VIDEO BACKGROUND FULLSCREEN & SUPER TAJAM (2K/4K) --- */
+/* --- VIDEO BACKGROUND FULLSCREEN (SUPER TAJAM) --- */
 .bg-video {
     position: fixed;
     top: 50%;
@@ -26,21 +26,18 @@ body {
     transform: translate(-50%, -50%);
     object-fit: cover;
     pointer-events: none;
-    
-    /* Pengaturan Rendering Browser Agar Video 2K Tajam */
     image-rendering: -webkit-optimize-contrast;
     image-rendering: crisp-edges;
-    filter: contrast(105%) brightness(100%);
 }
 
-/* Overlay Transparan Gelap */
+/* Overlay Nuansa Deep Blue / Ocean */
 .bg-overlay {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(10, 10, 20, 0.50);
+    background: rgba(8, 18, 32, 0.45); /* Gelap transparan dengan tone biru laut */
     z-index: -1;
     pointer-events: none;
 }
@@ -50,15 +47,15 @@ body {
     position: fixed;
     top: 1.2rem;
     right: 1.2rem;
-    background: rgba(15, 23, 42, 0.85);
-    border: 1px solid rgba(0, 240, 255, 0.4);
-    color: #00f0ff;
+    background: rgba(10, 25, 47, 0.85);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    color: #00e5ff;
     padding: 0.5rem 1rem;
     border-radius: 30px;
     font-size: 0.85rem;
     font-weight: 700;
     letter-spacing: 1px;
-    box-shadow: 0 0 12px rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.15);
     z-index: 100;
     display: flex;
     align-items: center;
@@ -66,7 +63,7 @@ body {
 }
 
 .class-badge i {
-    color: #ff4d6d;
+    color: #70a1ff;
 }
 
 /* --- Hero Section --- */
@@ -80,18 +77,19 @@ body {
     margin: 0 auto;
 }
 
-.jp-tag {
-    display: inline-block;
-    background: rgba(255, 0, 85, 0.3);
-    color: #ff4d6d;
-    border: 1px solid rgba(255, 0, 85, 0.6);
+.theme-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: rgba(0, 229, 255, 0.15);
+    color: #00e5ff;
+    border: 1px solid rgba(0, 229, 255, 0.4);
     padding: 0.3rem 1rem;
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
-    letter-spacing: 1px;
     margin-bottom: 1rem;
-    box-shadow: 0 0 10px rgba(255, 0, 85, 0.3);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
 }
 
 .hero h1 {
@@ -101,9 +99,9 @@ body {
     line-height: 1.2;
 }
 
-.neon-text {
-    color: #00f0ff;
-    text-shadow: 0 0 10px rgba(0, 240, 255, 0.7), 0 0 20px rgba(0, 240, 255, 0.4);
+.ice-text {
+    color: #e0f7fa;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.6), 0 0 20px rgba(0, 229, 255, 0.3);
 }
 
 .subtitle {
@@ -117,21 +115,21 @@ body {
 }
 
 .music-btn {
-    background: rgba(15, 23, 42, 0.85);
-    border: 1px solid rgba(0, 240, 255, 0.4);
-    color: #00f0ff;
+    background: rgba(10, 25, 47, 0.85);
+    border: 1px solid rgba(0, 229, 255, 0.4);
+    color: #00e5ff;
     padding: 0.6rem 1.4rem;
     border-radius: 25px;
     font-size: 0.9rem;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+    box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
 }
 
 .music-btn:hover {
-    background: rgba(0, 240, 255, 0.2);
-    box-shadow: 0 0 18px rgba(0, 240, 255, 0.5);
+    background: rgba(0, 229, 255, 0.2);
+    box-shadow: 0 0 18px rgba(0, 229, 255, 0.4);
     transform: translateY(-2px);
 }
 
@@ -142,20 +140,20 @@ body {
     padding: 0 1.5rem;
 }
 
-/* Glass Card Transparan & Bening */
+/* Glass Card Transparan */
 .glass-card {
-    background: rgba(15, 23, 42, 0.75);
+    background: rgba(10, 25, 47, 0.7);
     border: 1px solid rgba(255, 255, 255, 0.15);
     border-radius: 20px;
     padding: 2rem;
     margin-bottom: 2rem;
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
     transition: all 0.3s ease;
 }
 
 .glass-card:hover {
-    border-color: rgba(0, 240, 255, 0.5);
-    box-shadow: 0 8px 32px 0 rgba(0, 240, 255, 0.2);
+    border-color: rgba(0, 229, 255, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 229, 255, 0.15);
 }
 
 /* Details Accordion */
@@ -189,7 +187,7 @@ details summary::-webkit-details-marker {
 }
 
 .arrow-icon {
-    color: #00f0ff;
+    color: #00e5ff;
     transition: transform 0.3s ease;
 }
 
@@ -218,7 +216,7 @@ details[open] .arrow-icon {
 }
 
 .info-item {
-    background: rgba(15, 23, 42, 0.6);
+    background: rgba(15, 23, 42, 0.5);
     border: 1px solid rgba(255, 255, 255, 0.08);
     padding: 1rem;
     border-radius: 12px;
@@ -228,7 +226,7 @@ details[open] .arrow-icon {
 }
 
 .info-item i {
-    color: #ff4d6d;
+    color: #00e5ff;
     font-size: 1.2rem;
     margin-top: 0.2rem;
 }
@@ -280,15 +278,9 @@ details[open] .arrow-icon {
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.jp-sub {
-    font-size: 0.85rem;
-    color: #64748b;
-    font-weight: 400;
-}
-
 .icon {
     font-size: 1.3rem;
-    color: #ff4d6d;
+    color: #00e5ff;
 }
 
 /* Project Grid */
@@ -306,7 +298,7 @@ details[open] .arrow-icon {
 }
 
 .project-card {
-    background: rgba(15, 23, 42, 0.7);
+    background: rgba(10, 25, 47, 0.6);
     border: 1px solid rgba(255, 255, 255, 0.1);
     border-radius: 14px;
     padding: 1.25rem;
@@ -315,12 +307,12 @@ details[open] .arrow-icon {
 
 .project-card:hover {
     transform: translateY(-4px);
-    border-color: #ff4d6d;
+    border-color: #00e5ff;
 }
 
 .project-tag {
     font-size: 0.7rem;
-    color: #00f0ff;
+    color: #00e5ff;
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-bottom: 0.5rem;
@@ -337,7 +329,7 @@ details[open] .arrow-icon {
 }
 
 .project-card h3 i {
-    color: #ff4d6d;
+    color: #70a1ff;
     font-size: 0.95rem;
 }
 
@@ -355,6 +347,6 @@ footer {
 }
 
 footer span {
-    color: #ff4d6d;
+    color: #00e5ff;
     font-weight: 600;
 }
