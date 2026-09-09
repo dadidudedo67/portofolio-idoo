@@ -73,7 +73,7 @@ body {
 }
 
 .class-badge i {
-    color: #70a1ff;
+    color: #00e5ff;
 }
 
 /* Tombol Suara ON/OFF */
@@ -135,20 +135,22 @@ body {
 }
 
 .koi-badge-icon {
-    color: #ff6b6b;
+    color: #00e5ff; /* Diubah ke Biru Neon */
     animation: koiSwim 3s ease-in-out infinite alternate;
+    filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.8));
 }
 
-/* Judul Bergerak Mengapung (Floating) */
-.hero h1 {
+/* Judul Bergerak Mengapung (Pasti Gerak) */
+.moving-title {
     font-size: 2.8rem;
     font-weight: 800;
     margin-bottom: 0.5rem;
     line-height: 1.2;
-    animation: floatTitle 3.5s ease-in-out infinite alternate;
+    display: inline-block;
+    animation: bounceTitle 2.5s ease-in-out infinite alternate !important;
 }
 
-/* Teks Idoo Berkilau & Glowing (Shining Gradient) */
+/* Teks Idoo Berkilau & Glowing */
 .ice-text {
     background: linear-gradient(90deg, #00e5ff, #ffffff, #70a1ff, #00e5ff);
     background-size: 200% auto;
@@ -162,11 +164,11 @@ body {
 
 .koi-heading-icon {
     font-size: 2rem;
-    color: #ff5252;
+    color: #00e5ff; /* Diubah ke Biru Neon */
     margin-left: 0.3rem;
     display: inline-block;
-    animation: floatKoi 4s ease-in-out infinite;
-    filter: drop-shadow(0 0 8px rgba(255, 82, 82, 0.6));
+    animation: floatKoi 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 10px rgba(0, 229, 255, 0.8));
 }
 
 .subtitle {
@@ -252,8 +254,8 @@ details summary::-webkit-details-marker {
 }
 
 .koi-accent {
-    color: #ff6b6b !important;
-    filter: drop-shadow(0 0 6px rgba(255, 107, 107, 0.5));
+    color: #00e5ff !important; /* Diubah ke Biru Neon */
+    filter: drop-shadow(0 0 8px rgba(0, 229, 255, 0.7));
 }
 
 .arrow-icon {
@@ -281,7 +283,7 @@ details[open] .arrow-icon {
 /* Info Grid */
 .info-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.2rem;
 }
 
@@ -300,57 +302,70 @@ details[open] .arrow-icon {
     border-color: rgba(0, 229, 255, 0.3);
 }
 
-.info-item i {
+.icon-neon {
     color: #00e5ff;
     font-size: 1.25rem;
     margin-top: 0.2rem;
+    filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.5));
 }
 
 .info-item strong {
     display: block;
     font-size: 0.85rem;
     color: #94a3b8;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.5rem;
 }
 
-.info-item p {
-    font-size: 0.9rem;
-    color: #f8fafc;
+/* --- Desain Kolom Tombol Sekolah Keren --- */
+.school-card-body {
+    width: 100%;
 }
 
-/* Link Sekolah (Interaktif) */
-.school-link {
-    display: inline-flex;
+.school-button {
+    display: flex;
     align-items: center;
-    gap: 0.4rem;
-    color: #00e5ff;
+    justify-content: space-between;
     text-decoration: none;
-    font-size: 0.88rem;
-    font-weight: 600;
-    margin-top: 0.1rem;
-    padding: 0.2rem 0.5rem;
-    margin-left: -0.5rem;
-    border-radius: 8px;
     background: rgba(0, 229, 255, 0.08);
-    border: 1px solid rgba(0, 229, 255, 0.2);
+    border: 1px solid rgba(0, 229, 255, 0.25);
+    padding: 0.6rem 0.8rem;
+    border-radius: 12px;
     transition: all 0.3s ease;
+    margin-top: 0.2rem;
 }
 
-.school-link i {
-    font-size: 0.75rem;
-    margin-top: 0;
+.school-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.school-name {
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.school-sub {
+    color: #00e5ff;
+    font-size: 0.72rem;
+    font-weight: 600;
+}
+
+.school-icon {
+    color: #00e5ff;
+    font-size: 0.85rem;
     transition: transform 0.3s ease;
 }
 
-.school-link:hover {
+.school-button:hover {
     background: rgba(0, 229, 255, 0.2);
     border-color: rgba(0, 229, 255, 0.6);
-    color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
+    box-shadow: 0 0 15px rgba(0, 229, 255, 0.25);
+    transform: translateY(-2px);
 }
 
-.school-link:hover i {
-    transform: translate(2px, -2px);
+.school-button:hover .school-icon {
+    transform: translate(3px, -3px);
 }
 
 /* Sosmed Buttons */
@@ -423,13 +438,13 @@ details[open] .arrow-icon {
     right: -10px;
     bottom: -15px;
     font-size: 4rem;
-    color: rgba(0, 229, 255, 0.04);
+    color: rgba(0, 229, 255, 0.05);
     pointer-events: none;
     transition: color 0.3s ease;
 }
 
 .project-card:hover .card-koi-watermark {
-    color: rgba(255, 107, 107, 0.1);
+    color: rgba(0, 229, 255, 0.15); /* Diubah ke Biru Neon */
 }
 
 .project-card:hover {
@@ -481,14 +496,19 @@ footer span {
 }
 
 .koi-footer-icon {
-    color: #ff6b6b;
+    color: #00e5ff; /* Diubah ke Biru Neon */
     margin: 0 0.2rem;
+    filter: drop-shadow(0 0 5px rgba(0, 229, 255, 0.6));
 }
 
 /* --- Keyframe Animations --- */
-@keyframes floatTitle {
-    0% { transform: translateY(0px); }
-    100% { transform: translateY(-7px); }
+@keyframes bounceTitle {
+    0% {
+        transform: translateY(0px);
+    }
+    100% {
+        transform: translateY(-12px);
+    }
 }
 
 @keyframes shineText {
@@ -498,10 +518,10 @@ footer span {
 
 @keyframes floatKoi {
     0%, 100% { transform: translateY(0) rotate(0deg); }
-    50% { transform: translateY(-6px) rotate(-10deg); }
+    50% { transform: translateY(-8px) rotate(-10deg); }
 }
 
 @keyframes koiSwim {
     0% { transform: translateX(0); }
-    100% { transform: translateX(4px); }
+    100% { transform: translateX(6px); }
 }
