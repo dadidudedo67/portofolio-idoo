@@ -14,13 +14,13 @@
 </head>
 <body>
 
-    <!-- Video Background -->
-    <video autoplay loop muted playsinline class="bg-video">
+    <!-- Video Background dengan Suara Bawaan -->
+    <video id="bg-video" autoplay loop playsinline class="bg-video">
         <source src="bg2-idooo.mp4" type="video/mp4">
         Browser kamu tidak mendukung tag video.
     </video>
 
-    <!-- Overlay Gelap Nuansa Biru Laut -->
+    <!-- Overlay Gelap Nuansa Deep Blue -->
     <div class="bg-overlay"></div>
 
     <!-- Badge Kelas / Status (Kanan Atas) -->
@@ -35,13 +35,8 @@
         <h1>Halo, Saya <span class="ice-text">Idho</span></h1>
         <p class="subtitle">Web Developer & Creative Designer</p>
         
-        <!-- Tombol Musik -->
-        <div class="audio-control">
-            <button class="music-btn" onclick="toggleAudio()">
-                <i class="fa-solid fa-music"></i> <span id="music-text">Play Audio</span>
-            </button>
-            <audio id="bg-music" loop src="music.mp3"></audio>
-        </div>
+        <!-- Petunjuk Audio -->
+        <p class="audio-hint"><i class="fa-solid fa-volume-high"></i> Klik/scroll di mana saja untuk mengaktifkan suara</p>
     </header>
 
     <!-- Main Container -->
@@ -113,19 +108,27 @@
         <p>&copy; 2026 Idho. Dibuat dengan <span>CSS3 & HTML5</span></p>
     </footer>
 
-    <!-- Script Musik -->
+    <!-- Script Auto Unmute Saat Klik atau Scroll -->
     <script>
-        function toggleAudio() {
-            const music = document.getElementById('bg-music');
-            const btnText = document.getElementById('music-text');
-            if (music.paused) {
-                music.play();
-                btnText.innerText = "Pause Audio";
-            } else {
-                music.pause();
-                btnText.innerText = "Play Audio";
-            }
+        const video = document.getElementById('bg-video');
+
+        // Mute di awal agar autoplay video tidak diblokir browser
+        video.muted = true;
+
+        // Fungsi untuk mengaktifkan suara
+        function enableAudio() {
+            video.muted = false;
+            video.play();
+            // Hapus event listener setelah suara aktif
+            window.removeEventListener('click', enableAudio);
+            window.removeEventListener('touchstart', enableAudio);
+            window.removeEventListener('scroll', enableAudio);
         }
+
+        // Jalankan saat pengguna klik, sentuh layar HP, atau scroll
+        window.addEventListener('click', enableAudio);
+        window.addEventListener('touchstart', enableAudio);
+        window.addEventListener('scroll', enableAudio);
     </script>
 </body>
 </html>
