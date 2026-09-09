@@ -43,7 +43,7 @@
             <i class="fa-solid fa-fish-fins koi-badge-icon"></i> Asian Cyprinid Theme
         </div>
         
-        <!-- Judul dengan Animasi Ketik (Typewriter) -->
+        <!-- Judul Animasi Ketik (Typewriter) -->
         <h1 class="moving-title">
             <span id="typewriter-text"></span><span class="cursor">|</span>
             <i class="fa-solid fa-fish koi-heading-icon"></i>
@@ -71,7 +71,7 @@
                     </p>
                     <div class="info-grid">
                         
-                        <!-- Kolom Sekolah (Bentuk Card Interaktif) -->
+                        <!-- Kolom Sekolah (Card Interaktif) -->
                         <div class="info-item school-card-item">
                             <i class="fa-solid fa-school icon-neon"></i>
                             <div class="school-card-body">
@@ -140,7 +140,7 @@
         <p>&copy; 2026 Idoo. Dibuat dengan <i class="fa-solid fa-fish koi-footer-icon"></i> & <span>CSS3 / HTML5</span></p>
     </footer>
 
-    <!-- Script Tombol Suara & Animasi Ketik -->
+    <!-- Script Tombol Suara & Animasi Ketik Smooth -->
     <script>
         // Script Suara Video Background
         function toggleSound() {
@@ -163,49 +163,39 @@
             }
         }
 
-        // Script Animasi Ketik (Typewriter) Seperti VT TikTok
+        // Script Animasi Ketik Smooth (Fix Patah-patah)
         const textElement = document.getElementById("typewriter-text");
-        const phrases = [
-            'Halo, Saya <span class="ice-text">Idoo</span>',
-            'Web Designer'
-        ];
+        
+        // Array karakter terpisah agar HTML tidak membuat animasi macet
+        const phrase1 = ["H","a","l","o",","," ","S","a","y","a"," ", '<span class="ice-text">I','d','o','o</span>'];
+        const phrase2 = ["W","e","b"," ","D","e","s","i","g","n","e","r"];
+        
+        const phrases = [phrase1, phrase2];
 
         let phraseIndex = 0;
         let charIndex = 0;
         let isDeleting = false;
 
         function typeEffect() {
-            const currentPhrase = phrases[phraseIndex];
+            const currentArray = phrases[phraseIndex];
 
             if (isDeleting) {
-                if (currentPhrase.includes('<span class="ice-text">')) {
-                    if (charIndex > 11) {
-                        charIndex--;
-                    } else {
-                        charIndex = 0;
-                    }
-                } else {
-                    charIndex--;
-                }
+                charIndex--;
             } else {
-                if (currentPhrase.includes('<span class="ice-text">') && charIndex === 11) {
-                    charIndex = currentPhrase.length;
-                } else {
-                    charIndex++;
-                }
+                charIndex++;
             }
 
-            textElement.innerHTML = currentPhrase.substring(0, charIndex);
+            textElement.innerHTML = currentArray.slice(0, charIndex).join("");
 
-            let typingSpeed = isDeleting ? 40 : 80;
+            let typingSpeed = isDeleting ? 35 : 75;
 
-            if (!isDeleting && charIndex >= currentPhrase.length) {
-                typingSpeed = 2000; // Tahan teks selama 2 detik
+            if (!isDeleting && charIndex === currentArray.length) {
+                typingSpeed = 2200; // Tahan teks 2.2 detik pas lengkap
                 isDeleting = true;
             } else if (isDeleting && charIndex === 0) {
                 isDeleting = false;
                 phraseIndex = (phraseIndex + 1) % phrases.length;
-                typingSpeed = 500;
+                typingSpeed = 400;
             }
 
             setTimeout(typeEffect, typingSpeed);
