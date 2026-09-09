@@ -14,8 +14,8 @@
 </head>
 <body>
 
-    <!-- Video Background dengan Suara Bawaan -->
-    <video id="bg-video" autoplay loop playsinline class="bg-video">
+    <!-- Video Background -->
+    <video id="bg-video" autoplay loop muted playsinline class="bg-video">
         <source src="bg2-idooo.mp4" type="video/mp4">
         Browser kamu tidak mendukung tag video.
     </video>
@@ -23,10 +23,18 @@
     <!-- Overlay Gelap Nuansa Deep Blue -->
     <div class="bg-overlay"></div>
 
-    <!-- Badge Kelas / Status (Kanan Atas) -->
-    <div class="class-badge">
-        <i class="fa-solid fa-graduation-cap"></i>
-        <span>STUDENT / PELAJAR</span>
+    <!-- Container Header Kanan Atas (Badge Student + Tombol Suara) -->
+    <div class="top-right-controls">
+        <div class="class-badge">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>STUDENT / PELAJAR</span>
+        </div>
+        
+        <!-- Tombol Suara ON/OFF di bawah Student Badge -->
+        <button id="sound-btn" class="sound-toggle-btn" onclick="toggleSound()">
+            <i id="sound-icon" class="fa-solid fa-volume-xmark"></i>
+            <span id="sound-text">SOUND OFF</span>
+        </button>
     </div>
 
     <!-- Hero Section -->
@@ -34,9 +42,6 @@
         <div class="theme-tag"><i class="fa-solid fa-water"></i> Personal Space</div>
         <h1>Halo, Saya <span class="ice-text">Idho</span></h1>
         <p class="subtitle">Web Developer & Creative Designer</p>
-        
-        <!-- Petunjuk Audio -->
-        <p class="audio-hint"><i class="fa-solid fa-volume-high"></i> Klik/scroll di mana saja untuk mengaktifkan suara</p>
     </header>
 
     <!-- Main Container -->
@@ -108,27 +113,27 @@
         <p>&copy; 2026 Idho. Dibuat dengan <span>CSS3 & HTML5</span></p>
     </footer>
 
-    <!-- Script Auto Unmute Saat Klik atau Scroll -->
+    <!-- Script Tombol Suara ON/OFF -->
     <script>
-        const video = document.getElementById('bg-video');
+        function toggleSound() {
+            const video = document.getElementById('bg-video');
+            const icon = document.getElementById('sound-icon');
+            const text = document.getElementById('sound-text');
+            const btn = document.getElementById('sound-btn');
 
-        // Mute di awal agar autoplay video tidak diblokir browser
-        video.muted = true;
-
-        // Fungsi untuk mengaktifkan suara
-        function enableAudio() {
-            video.muted = false;
-            video.play();
-            // Hapus event listener setelah suara aktif
-            window.removeEventListener('click', enableAudio);
-            window.removeEventListener('touchstart', enableAudio);
-            window.removeEventListener('scroll', enableAudio);
+            if (video.muted) {
+                video.muted = false;
+                video.play();
+                icon.className = "fa-solid fa-volume-high";
+                text.innerText = "SOUND ON";
+                btn.classList.add("active");
+            } else {
+                video.muted = true;
+                icon.className = "fa-solid fa-volume-xmark";
+                text.innerText = "SOUND OFF";
+                btn.classList.remove("active");
+            }
         }
-
-        // Jalankan saat pengguna klik, sentuh layar HP, atau scroll
-        window.addEventListener('click', enableAudio);
-        window.addEventListener('touchstart', enableAudio);
-        window.addEventListener('scroll', enableAudio);
     </script>
 </body>
 </html>
